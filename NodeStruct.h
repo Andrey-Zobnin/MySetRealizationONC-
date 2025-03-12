@@ -1,6 +1,8 @@
 #ifndef Node_H
 #define Node_H
 
+#include <optional>
+
 struct Node {
     // value 
     int dataOfElement;
@@ -9,6 +11,7 @@ struct Node {
     // pointer to the previous node in the list
     Node* PointerForPreviosNode;
 
+    Node(int value) : dataOfElement(value), PointerForNextNode(nullptr), PointerForPreviosNode(nullptr) {}
+    Node() : PointerForNextNode(nullptr), PointerForPreviosNode(nullptr) {} // Конструктор по умолчанию
 };
-
 #endif 
