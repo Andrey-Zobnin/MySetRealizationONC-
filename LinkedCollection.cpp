@@ -35,3 +35,10 @@ LinkedCollection::~LinkedCollection() {
     head = nullptr;
     tail = nullptr;
 }
+
+// Add element to the end of the list
+void LinkedCollection::addElement(int value){
+    // create new node to add in the list head and tail
+    Node* newNode = new Node(value);
+
+}
