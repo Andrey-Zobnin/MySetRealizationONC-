@@ -40,5 +40,9 @@ LinkedCollection::~LinkedCollection() {
 void LinkedCollection::addElement(int value){
     // create new node to add in the list head and tail
     Node* newNode = new Node(value);
-
+    // if list is empty, set new node as head and tail
+    if (head == nullptr) {
+        head = newNode;
+        tail = newNode;
+    } 
 }
