@@ -44,5 +44,12 @@ void LinkedCollection::addElement(int value){
     if (head == nullptr) {
         head = newNode;
         tail = newNode;
-    } 
+    } else {
+        // set next pointer of the new node to the head
+        newNode->PointerForNextNode = head;
+        // set previous pointer of the head to the new node
+        head->PointerForPreviosNode = newNode;
+        // set head to the new node
+        head = newNode;
+    }
 }
