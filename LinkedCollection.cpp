@@ -53,3 +53,31 @@ void LinkedCollection::addElement(int value){
         head = newNode;
     }
 }
+
+// Removes the first occurrence of an element
+// Removes the first occurrence of an element
+bool LinkedCollection::removeElement(int value) {
+    Node* current = head;
+
+    while (current != nullptr) {
+        if (current->dataOfElement == value) {
+            // If node not in list, that head
+            if (current->PointerForPreviosNode) {
+                current->PointerForPreviosNode->PointerForNextNode = current->PointerForNextNode;
+            } else {
+                head = current->PointerForNextNode; // else if if it head is already
+            }
+
+            if (current->PointerForNextNode) {
+                current->PointerForNextNode->PointerForPreviosNode = current->PointerForPreviosNode;
+            } else {
+                tail = current->PointerForPreviosNode; // if is last node then already tail 
+            }
+
+            delete current; // Remove current node
+            return true; // return bool true if current != nullptr
+        }
+        current = current->PointerForNextNode; // to next node in list
+    }
+    return false; // if element not found then return false
+}
