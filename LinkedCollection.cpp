@@ -17,3 +17,21 @@ LinkedCollection::LinkedCollection(const LinkedCollection& other) : head(nullptr
         current = current->PointerForNextNode;
     }
 }
+
+// Defualt Destructor
+LinkedCollection::~LinkedCollection() {
+    // delete all nodes in the list
+    Node* current = head;
+    // use while loop 
+    while (current != nullptr) {
+        // node to delete use pointer to next 
+        Node* next = current->PointerForNextNode; 
+        // delete the current node
+        delete current;
+        // set current to next node
+        current = next;
+    }
+    // set head and tail to nullptr after deleting all nodes
+    head = nullptr;
+    tail = nullptr;
+}
