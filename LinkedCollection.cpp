@@ -186,3 +186,22 @@ LinkedCollection LinkedCollection::operator+(const LinkedCollection& other) cons
     // return result list pointer
     return result;
 }
+
+// Compares two lists for equality
+bool LinkedCollection::operator==(const LinkedCollection& other) const {
+    // compare elements from this list and other list for equality
+    Node* current1 = head;
+    Node* current2 = other.head;
+    // compare elements from this list and other list for equality and return true if they are equal, otherwise return false
+    while (current1 != nullptr && current2 != nullptr) {
+        // if elements are not equal then return false
+        if (current1->dataOfElement != current2->dataOfElement) {
+            return false;
+        }
+        // to next node in list of elements 
+        current1 = current1->PointerForNextNode;
+        current2 = current2->PointerForNextNode;
+    }
+    // if both lists are empty or have same elements then return true, otherwise return false
+    return current1 == nullptr && current2 == nullptr;
+}
