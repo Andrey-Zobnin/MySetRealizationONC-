@@ -81,3 +81,27 @@ bool LinkedCollection::removeElement(int value) {
     }
     return false; // if element not found then return false
 }
+
+// Finds the maximum element in the list
+int LinkedCollection::findMax() const {
+    // if list is empty, return -1
+    if (head == nullptr) {
+        std::cerr << "Error: List is empty!" << std::endl;
+        return -1; // Return -1 if the list is empty
+    }
+
+    int maxFoundNow = head->dataOfElement;
+    // iterate through the list and find maximum
+    Node* current = head->PointerForNextNode;
+    // if current node data is greater then maxFoundNow then update maxFoundNow
+    while (current != nullptr) {
+        if (current->dataOfElement > maxFoundNow) {
+            // update maxFoundNow to current node data
+            maxFoundNow = current->dataOfElement;
+        }
+        // to next node in list
+        current = current->PointerForNextNode;
+    }
+    // return max found 
+    return maxFoundNow;
+}
