@@ -105,3 +105,29 @@ int LinkedCollection::findMax() const {
     // return max found 
     return maxFoundNow;
 }
+
+// Finds the minimum element in the list 
+int LinkedCollection::findMin() const {
+    // if list is empty, return -1
+    if (head == nullptr) {
+        std::cerr << "Error: List is empty!" << std::endl;
+        return -1; // Return -1 if the list is empty
+    }
+
+    int minFoundNow = head->dataOfElement;
+    // iterate through the list and find minimum
+    Node* current = head->PointerForNextNode;
+    // if current node data is less then minFoundNow then update minFoundNow
+    while (current != nullptr) {
+        if (current->dataOfElement < minFoundNow) {
+            // update minFoundNow to current node data
+            minFoundNow = current->dataOfElement;
+        }
+        // to next node in list
+        current = current->PointerForNextNode;
+    }
+    // return min found 
+    return minFoundNow;
+}
+
+// Checks if the list is empty
