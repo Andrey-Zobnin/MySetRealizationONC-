@@ -130,4 +130,18 @@ int LinkedCollection::findMin() const {
     return minFoundNow;
 }
 
-// Checks if the list is empty
+// Returns the number of elements in the list
+int LinkedCollection::getSize() const {
+    // if list is empty, return 0 == size of the list
+    int size = 0;
+    Node* current = head;
+    // iterate through the list and count elements
+    while (current != nullptr) {
+        // to next node in list
+        size++;
+        // count elements
+        current = current->PointerForNextNode;
+    }
+    // return size of the list
+    return size;
+}
