@@ -156,3 +156,33 @@ void LinkedCollection::iterate() const {
     }
     std::cout << std::endl;
 }
+
+// Returns the address of the first node
+Node* LinkedCollection::getAddress() const {
+    // return address of the first node in the list
+    return head;
+}
+
+// Concatenates two lists
+LinkedCollection LinkedCollection::operator+(const LinkedCollection& other) const {
+    // create new list to store concatenated elements from this and other lists
+    LinkedCollection result;
+    Node* current = head;
+    // copy elements from this list to result
+    while (current != nullptr) {
+        // copy elements from other list to result list
+        result.addElement(current->dataOfElement);
+        // to next node in list
+        current = current->PointerForNextNode;
+    }
+
+    current = other.head;
+    // copy elements from other list to result
+    while (current != nullptr) {
+        // copy elements from other list to result list
+        result.addElement(current->dataOfElement);
+        current = current->PointerForNextNode;
+    }
+    // return result list pointer
+    return result;
+}
