@@ -55,7 +55,6 @@ void LinkedCollection::addElement(int value){
 }
 
 // Removes the first occurrence of an element
-// Removes the first occurrence of an element
 bool LinkedCollection::removeElement(int value) {
     Node* current = head;
 
@@ -144,4 +143,16 @@ int LinkedCollection::getSize() const {
     }
     // return size of the list
     return size;
+}
+
+// Prints all elements in the list
+void LinkedCollection::iterate() const {
+    Node* current = head;
+    // iterate through the list and print elements
+    while (current != nullptr) {
+        std::cout << current->dataOfElement << " ";
+        // to next node in list
+        current = current->PointerForNextNode;
+    }
+    std::cout << std::endl;
 }
