@@ -1,0 +1,5 @@
+g++ -o test_main test.cpp LinkedCollection.cpp main.cpp
+./test_main
+
+g++ -o main main.cpp LinkedCollection.cpp test.cpp
+./main
