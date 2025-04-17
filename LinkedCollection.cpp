@@ -19,6 +19,13 @@ LinkedCollection::LinkedCollection(const LinkedCollection& other) : head(nullptr
 }
 
 // Defualt Destructor
+/*
+
+    LinkedCollection – это имя класса.
+
+    ~LinkedCollection() – это деструктор, который автоматически вызывается при уничтожении объекта этого класса
+
+*/
 LinkedCollection::~LinkedCollection() {
     // delete all nodes in the list
     Node* current = head;
